@@ -19,7 +19,6 @@ const ProductPicker = ({multiple}) => {
     fetchNextPage,
     dataUpdatedAt,
     refetch,
-    formattedValue,
     hasNextPage,
     isSelected,
     loading,

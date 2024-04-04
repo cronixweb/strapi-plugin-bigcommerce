@@ -1,5 +1,3 @@
-const _ = require('lodash');
-
 const transformResponse = (data) => {
   return {
     data: data?.data,

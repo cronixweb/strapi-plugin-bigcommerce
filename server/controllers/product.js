@@ -4,8 +4,7 @@ const {getProductsParamsSchema} = require('../utils/validation');
 module.exports = {
   getProducts: async (ctx) => {
     const query = getProductsParamsSchema.validateSync(ctx.query);
-    const products = await strapi.plugin(pluginId).service('bigcommerce').getProducts(query);
-    return products;
+    return await strapi.plugin(pluginId).service('bigcommerce').getProducts(query);
   },
   getProduct: async (ctx) => {
     ctx.send('hello');
