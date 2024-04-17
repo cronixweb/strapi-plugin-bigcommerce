@@ -8,5 +8,5 @@ module.exports = {
   },
   getProduct: async (ctx) => {
     ctx.send('hello');
-  },
+  }
 };

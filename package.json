@@ -4,7 +4,7 @@
   "description": "This is the description of the plugin.",
   "strapi": {
     "name": "big-commerce-fields",
-    "description": "Description of Big Commerce Fields plugin",
+    "description": "Use BigCommerce data in strapi",
     "kind": "plugin",
     "displayName": "Big Commerce Fields"
   },

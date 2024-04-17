@@ -23,6 +23,15 @@ module.exports = ({strapi}) => {
     return transformResponse(bigCommerceProducts);
   };
 
+  const getBrands = async (params) => {
+    const bigCommerceProducts = await fetch(url + 'catalog/brands?' + (new URLSearchParams(params).toString()), options)
+      .then(res => res.json())
+      .catch(err => console.error('error:' + err));
+    console.log(bigCommerceProducts);
+    console.log((new URLSearchParams(params).toString()))
+    return transformResponse(bigCommerceProducts);
+  };
+
   const getProduct = async (id) => {
     const bigCommerceProduct = fetch(url + 'catalog/products/' + id, options)
       .then(res => res.json())
@@ -31,5 +40,5 @@ module.exports = ({strapi}) => {
     return transformResponse(bigCommerceProduct);
   };
 
-  return {getProduct, getProducts};
+  return {getProduct, getProducts, getBrands};
 };

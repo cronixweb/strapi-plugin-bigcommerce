@@ -13,6 +13,14 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/brands',
+    handler: 'brand.getBrands',
+    config: {
+      middlewares: [`plugin::${pluginId}.pageInfo`],
+    },
+  },
+  {
+    method: 'GET',
     path: '/products/:id',
     handler: 'product.getProduct',
   },
