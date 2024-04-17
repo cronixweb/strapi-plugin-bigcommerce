@@ -28,4 +28,17 @@ module.exports = async ({strapi}) => {
     name: 'multiple-brands',
     type: 'json',
   });
+
+  // Categories Custom Fields
+  strapi.customFields.register({
+    plugin: pluginId,
+    name: 'single-category',
+    type: 'json',
+  });
+
+  strapi.customFields.register({
+    plugin: pluginId,
+    name: 'multiple-categories',
+    type: 'json',
+  });
 };

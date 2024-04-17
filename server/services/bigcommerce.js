@@ -43,5 +43,5 @@ module.exports = ({strapi}) => {
     return transformResponse(bigCommerceProduct);
   };
 
-  return {getProduct, getProducts, getBrands};
+  return {getProduct, getProducts, getBrands, getCategories};
 };
