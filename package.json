@@ -1,12 +1,16 @@
 {
-  "name": "big-commerce-fields",
-  "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "name": "strapi-plugin-bigcommerce",
+  "version": "1.0.0",
+  "description": "Use your BigCommerce data within Strapi",
   "strapi": {
-    "name": "big-commerce-fields",
+    "name": "bigcommerce",
     "description": "Use BigCommerce data in strapi",
     "kind": "plugin",
-    "displayName": "Big Commerce Fields"
+    "displayName": "BigCommerce"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cronixweb/strapi-plugin-bigcommerce.git"
   },
   "dependencies": {
     "@strapi/design-system": "^1.6.3",
