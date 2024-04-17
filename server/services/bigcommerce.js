@@ -18,8 +18,6 @@ module.exports = ({strapi}) => {
     const bigCommerceProducts = await fetch(url + 'catalog/products?' + (new URLSearchParams(params).toString()), options)
       .then(res => res.json())
       .catch(err => console.error('error:' + err));
-    console.log(bigCommerceProducts);
-    console.log((new URLSearchParams(params).toString()))
     return transformResponse(bigCommerceProducts);
   };
 
@@ -27,8 +25,13 @@ module.exports = ({strapi}) => {
     const bigCommerceProducts = await fetch(url + 'catalog/brands?' + (new URLSearchParams(params).toString()), options)
       .then(res => res.json())
       .catch(err => console.error('error:' + err));
-    console.log(bigCommerceProducts);
-    console.log((new URLSearchParams(params).toString()))
+    return transformResponse(bigCommerceProducts);
+  };
+
+  const getCategories = async (params) => {
+    const bigCommerceProducts = await fetch(url + 'catalog/categories?' + (new URLSearchParams(params).toString()), options)
+      .then(res => res.json())
+      .catch(err => console.error('error:' + err));
     return transformResponse(bigCommerceProducts);
   };
 

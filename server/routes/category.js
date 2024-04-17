@@ -5,15 +5,10 @@ const pluginId = require('../../admin/src/pluginId');
 module.exports = [
   {
     method: 'GET',
-    path: '/products',
-    handler: 'product.getProducts',
+    path: '/categories',
+    handler: 'category.getCategories',
     config: {
       middlewares: [`plugin::${pluginId}.pageInfo`],
     },
-  },
-  {
-    method: 'GET',
-    path: '/products/:id',
-    handler: 'product.getProduct',
   },
 ];
