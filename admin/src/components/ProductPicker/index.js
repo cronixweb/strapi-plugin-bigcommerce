@@ -55,8 +55,8 @@ const ProductPicker = ({multiple}) => {
                   <ProductCard
                     selected={isSelected(product)}
                     onChange={() => handleChange(product)}
-                    title={product.title}
-                    image={product.image?.src}
+                    title={product.name}
+                    image={product.images?.[0]?.url_thumbnail}
                     productId={product.id}
                   />
                 </GridItem>

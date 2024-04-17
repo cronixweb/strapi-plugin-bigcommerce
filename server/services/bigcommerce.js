@@ -15,24 +15,25 @@ module.exports = ({strapi}) => {
   };
 
   const getProducts = async (params) => {
-    const bigCommerceProducts = await fetch(url + 'catalog/products?' + (new URLSearchParams(params).toString()), options)
+    const bigCommerceResponse = await fetch(url + 'catalog/products?' + (new URLSearchParams(params).toString()), options)
       .then(res => res.json())
       .catch(err => console.error('error:' + err));
-    return transformResponse(bigCommerceProducts);
+    console.log(bigCommerceResponse);
+    return transformResponse(bigCommerceResponse);
   };
 
   const getBrands = async (params) => {
-    const bigCommerceProducts = await fetch(url + 'catalog/brands?' + (new URLSearchParams(params).toString()), options)
+    const bigCommerceResponse = await fetch(url + 'catalog/brands?' + (new URLSearchParams(params).toString()), options)
       .then(res => res.json())
       .catch(err => console.error('error:' + err));
-    return transformResponse(bigCommerceProducts);
+    return transformResponse(bigCommerceResponse);
   };
 
   const getCategories = async (params) => {
-    const bigCommerceProducts = await fetch(url + 'catalog/categories?' + (new URLSearchParams(params).toString()), options)
+    const bigCommerceResponse = await fetch(url + 'catalog/categories?' + (new URLSearchParams(params).toString()), options)
       .then(res => res.json())
       .catch(err => console.error('error:' + err));
-    return transformResponse(bigCommerceProducts);
+    return transformResponse(bigCommerceResponse);
   };
 
   const getProduct = async (id) => {
