@@ -31,11 +31,15 @@
     "styled-components": "^5.2.1"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Cronix LLC",
+    "email": "contact@cronixweb.com",
+    "url": "https://cronixweb.com"
   },
   "maintainers": [
     {
-      "name": "A Strapi developer"
+      "name": "Cronix LLC",
+      "email": "contact@cronixweb.com",
+      "url": "https://cronixweb.com"
     }
   ],
   "engines": {
