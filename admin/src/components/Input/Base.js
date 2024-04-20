@@ -31,8 +31,9 @@ const Callout = styled(Stack)`
 
 const Input = ({name, multiple, attribute, onChange, value, error}) => {
   const [pickerOpen, setPickerOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const fetchProducts = async (pageParam) => {
+  const fetchProducts = useCallback(async (pageParam) => {
     if (pageParam) return await request(`/${pluginId}/products`, {params: pageParam});
     else
       return await request(`/${pluginId}/products`, {
@@ -45,9 +46,10 @@ const Input = ({name, multiple, attribute, onChange, value, error}) => {
           include: Array.from(
             new Set([...get(attribute, 'options.fields', []), 'images'])
           ),
+          keyword: searchQuery
         },
       });
-  };
+  }, [searchQuery]);
 
   const {
     data,
@@ -95,7 +97,17 @@ const Input = ({name, multiple, attribute, onChange, value, error}) => {
     [formattedValue]
   );
 
-  const togglePicker = () => setPickerOpen((prev) => !prev);
+  const togglePicker = () => {
+    if (pickerOpen) {
+      setSearchQuery('');
+      setPickerOpen((prev) => !prev)
+      setTimeout(() => {
+        refetch();
+      }, 1000)
+    } else {
+      setPickerOpen((prev) => !prev)
+    }
+  };
 
   const isSelected = (product) => {
     if (multiple) return formattedValue?.some((p) => p.id === product.id);
@@ -145,6 +157,8 @@ const Input = ({name, multiple, attribute, onChange, value, error}) => {
         products,
         formattedValue,
         previewAmount,
+        searchQuery,
+        setSearchQuery
       }}
     >
       <Stack>
