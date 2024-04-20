@@ -40,7 +40,7 @@ const Input = ({name, multiple, attribute, onChange, value, error}) => {
           ...attribute.options,
           limit: 12,
           include_fields: Array.from(
-            new Set([...get(attribute, 'options.fields', []), 'id', 'name', 'image_url'])
+            new Set([...get(attribute, 'options.fields', []), 'id', 'name', 'custom_url', 'image_url'])
           ),
         },
       });
